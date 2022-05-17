@@ -13,7 +13,7 @@ void listas();
 void archivos();
 void eliminar();
 void modificar();
-int alta, *a, * subtotal, * iva, * total, *b, * hora;
+int alta, *a, * subtotal,*numc, * iva, * total, *b, * hora;
 int opc;
 string * nombre;
 string * desc;
@@ -69,7 +69,7 @@ int main()
 	case 7: 
 		return EXIT_SUCCESS;
 		
-	default: cout << "Usted ha ingresado una opción incorrecta";
+	default: cout << "Usted ha ingresado una opción incorrecta"<<endl;
 	}
 	cout << "Quieres regresar al menu?" << endl << "Presiona 1 para regresar, 2 para salir" << endl;
 	cin >> opc;
@@ -92,8 +92,11 @@ void Alta()
 	subtotal = new int[alta];
 	desc = new string [alta];
     med = new string [alta];
+    numc = new int[alta];
 	for (int i = 0;i < alta;i++)
 	{
+	    cout << "Ingresa el numero de la cita" << endl;
+		cin >> numc[i];
 	    while (getchar() != '\n'); 
         cout << "Ingrese el nombre del paciente" << endl; 
 		getline(cin, nombre[i]); 
@@ -284,6 +287,7 @@ void modificar()
 	default:
 		cout << "La opcion no es valida." << endl;
 	 }
+	 
 	 
 }
 			
